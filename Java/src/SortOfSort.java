@@ -1,15 +1,29 @@
 public class SortOfSort{
-    public void sortOfSort(int[] arry){
-        int maxNum = arry[0];
+    public static void main(String[] args) {
+        int[] arry = {7, 9, 3, 8, 20, 13, 1, 7};
 
-        for (int i = 0; i < arry.length; i++) {
-            if (maxNum < arry[i])
-                maxNum = arry[i];
-        }
-        System.out.println(maxNum);
-
-        //LMAO this is probably the wrong way to start but ill figure it out later *heart eye emoji*
-        //Im baby UwU
-        //my mental stability decreasing at a rapid rate and it cant be stopped *Sun Glasses emoji*
+        sortOfSort(arry);
     }
+
+    public static void sortOfSort(int [] arry){
+        int x=0;
+        int maxNum = arry[0];
+        int tempNum;
+        while(x < arry.length){
+            for (int i = 0; i < arry.length; i++) {
+                if(arry[i] > maxNum){
+                    maxNum = arry[i];
+                    tempNum = arry[arry.length-1];
+                    arry[arry.length-1] = maxNum;
+                    arry[i] = tempNum;
+                }
+            }
+            System.out.println(maxNum);
+            x++;
+        }
+
+        for(int i=0; i<arry.length; i++)
+            System.out.print(arry[i] + " ");
+    }
+
 }
