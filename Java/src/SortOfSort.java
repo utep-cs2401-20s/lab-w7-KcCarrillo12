@@ -43,7 +43,8 @@ public class SortOfSort{
     }
 
     public static void swapArry(int[] arry, int maxNum, int swap){ //helper method
-        int tempNum = arry[maxNum];
+        int tempNum;
+        tempNum = arry[maxNum];
         arry[maxNum] = arry[swap];
         arry[swap] = tempNum;
     }
