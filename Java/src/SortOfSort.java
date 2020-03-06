@@ -4,10 +4,9 @@ public class SortOfSort{
         int arryEnd = arry.length - 1;
         int arryBeg = 0;
         int counter = 0;
-        int numCurr = 0;
 
         while(arryBeg < arryEnd){
-            numCurr = arryBeg;
+            int numCurr = arryBeg;
 
             for(int i=arryBeg; i<=arryEnd; i++){
                 if(arry[i] > numCurr){
@@ -16,22 +15,12 @@ public class SortOfSort{
                 }
             }
 
-            if(counter == 0){
+            if(counter == 0 || counter == 1){
                 swapArry(arry, maxNum, arryEnd);
                 counter++;
                 arryEnd--;
             }
-            else if(counter == 1){
-                swapArry(arry, maxNum, arryEnd);
-                counter++;
-                arryEnd--;
-            }
-            else if(counter == 2){
-                swapArry(arry, maxNum, arryBeg);
-                counter++;
-                arryBeg++;
-            }
-            else{
+            else if(counter == 2 || counter == 3){
                 swapArry(arry, maxNum, arryBeg);
                 counter++;
                 arryBeg++;
